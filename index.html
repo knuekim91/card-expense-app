@@ -5,19 +5,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>카드 사용 내역</title>
   <script>
-    (function () {
-      if (location.hostname.endsWith('github.io') && location.pathname.includes('card-expense-app')) {
-        document.write('<base href="/card-expense-app/">');
-      }
-    })();
+    window.APP_BASE = location.hostname.endsWith('github.io') ? '/card-expense-app/' : './';
+    window.SUPABASE_URL = 'https://lborjcpfyjdsesonyztw.supabase.co';
+    window.SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imxib3JqY3BmeWpkc2Vzb255enR3Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODI1NTMyNjEsImV4cCI6MjA5ODEyOTI2MX0.AIvf6zdKvYuA0CnRHd2p9MSYiTq9ZYdEYx10J4Q9-rs';
+    document.write('<link rel="stylesheet" href="' + window.APP_BASE + 'styles.css?v=5">');
   </script>
-  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <div id="configError" class="config-error" hidden>
     <div class="config-error-inner">
       <h2>Supabase 설정이 필요합니다</h2>
-      <p><code>config.js</code> 파일에 Supabase URL과 Anon Key를 입력한 뒤 다시 열어주세요.</p>
+      <p>앱 설정을 불러오지 못했습니다. 아래 주소로 다시 접속해 주세요.</p>
+      <p><a href="https://knuekim91.github.io/card-expense-app/">https://knuekim91.github.io/card-expense-app/</a></p>
     </div>
   </div>
 
@@ -172,7 +171,12 @@
   </div>
 
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-  <script src="config.js"></script>
-  <script src="app.js"></script>
+  <script>
+    (function () {
+      var script = document.createElement('script');
+      script.src = window.APP_BASE + 'app.js?v=5';
+      document.body.appendChild(script);
+    })();
+  </script>
 </body>
 </html>

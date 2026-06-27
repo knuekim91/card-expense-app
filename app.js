@@ -1,3 +1,6 @@
+const SUPABASE_URL = window.SUPABASE_URL;
+const SUPABASE_ANON_KEY = window.SUPABASE_ANON_KEY;
+
 const CARDS = {
   card1: { name: 'NH농협카드(재홍)', color: '#6366f1' },
   card2: { name: '롯데카드(재홍)', color: '#8b5cf6' },
@@ -49,15 +52,14 @@ let expenses = [];
 let realtimeChannel = null;
 
 function isConfigValid() {
-  if (typeof SUPABASE_URL === 'undefined' || typeof SUPABASE_ANON_KEY === 'undefined') {
-    return false;
-  }
   return (
     typeof SUPABASE_URL === 'string' &&
     typeof SUPABASE_ANON_KEY === 'string' &&
     SUPABASE_URL.startsWith('https://') &&
+    SUPABASE_URL.includes('.supabase.co') &&
     !SUPABASE_URL.includes('YOUR_PROJECT_ID') &&
-    SUPABASE_ANON_KEY !== 'YOUR_ANON_KEY'
+    SUPABASE_ANON_KEY !== 'YOUR_ANON_KEY' &&
+    SUPABASE_ANON_KEY.length > 20
   );
 }
 
