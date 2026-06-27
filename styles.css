@@ -331,3 +331,173 @@ body {
   min-width: 160px;
   max-width: 100%;
 }
+
+.config-error {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+
+.config-error-inner {
+  background: var(--surface);
+  border-radius: var(--radius);
+  padding: 28px;
+  box-shadow: var(--shadow);
+  max-width: 480px;
+  text-align: center;
+}
+
+.config-error-inner h2 {
+  margin-bottom: 10px;
+}
+
+.auth-screen {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px 16px;
+}
+
+.auth-card {
+  width: 100%;
+  max-width: 440px;
+  background: var(--surface);
+  border-radius: var(--radius);
+  padding: 28px 24px;
+  box-shadow: var(--shadow);
+}
+
+.auth-card h1,
+.auth-card h2 {
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+.auth-subtitle {
+  margin-top: 8px;
+  margin-bottom: 20px;
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+.auth-tabs {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+.auth-tab {
+  border: 1px solid var(--border);
+  background: var(--bg);
+  color: var(--text-muted);
+  border-radius: 8px;
+  padding: 10px;
+  font-family: inherit;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.auth-tab.active {
+  background: var(--primary);
+  border-color: var(--primary);
+  color: #fff;
+}
+
+.auth-form {
+  display: grid;
+  gap: 14px;
+}
+
+.btn-block {
+  width: 100%;
+}
+
+.btn-text {
+  background: transparent;
+  color: var(--text-muted);
+  padding: 8px 12px;
+  font-size: 0.85rem;
+}
+
+.btn-text:hover {
+  color: var(--text);
+}
+
+.btn-small {
+  background: var(--bg);
+  color: var(--text);
+  padding: 6px 10px;
+  font-size: 0.8rem;
+  border: 1px solid var(--border);
+}
+
+.btn-small:hover {
+  background: var(--border);
+}
+
+.auth-message {
+  margin-top: 14px;
+  font-size: 0.85rem;
+  color: var(--primary);
+  text-align: center;
+}
+
+.auth-message.error {
+  color: var(--danger);
+}
+
+.household-options {
+  display: grid;
+  gap: 16px;
+}
+
+.household-option h3 {
+  font-size: 1rem;
+  margin-bottom: 6px;
+}
+
+.option-desc {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin-bottom: 12px;
+}
+
+.household-divider {
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 0.85rem;
+}
+
+.header-top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.household-banner {
+  margin-top: 14px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 12px;
+  padding: 12px 14px;
+  background: var(--surface);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  font-size: 0.85rem;
+}
+
+.invite-label {
+  color: var(--text-muted);
+}
+
+.invite-label strong {
+  color: var(--primary);
+  letter-spacing: 0.08em;
+}
