@@ -19,15 +19,34 @@
 
 ### GitHub Pages로 공유 (추천)
 
-저장소를 GitHub에 올린 뒤, 아래 설정으로 **무료 웹 주소**에서 누구나 사용할 수 있습니다.
+저장소를 GitHub에 올린 뒤 **무료 웹 주소**에서 누구나 사용할 수 있습니다.
+
+#### 자동 배포 (PowerShell)
+
+1. GitHub 로그인 (최초 1회)
+   ```powershell
+   gh auth login --hostname github.com --git-protocol https --web
+   ```
+   브라우저에서 인증 코드 입력 후 완료
+
+2. 프로젝트 폴더에서 배포 스크립트 실행
+   ```powershell
+   cd "g:\내 드라이브\경북여상26\커서\todo_app"
+   .\deploy.ps1
+   ```
+
+3. 1~2분 후 아래 주소로 접속
+   ```
+   https://[GitHub아이디].github.io/card-expense-app/
+   ```
+
+#### 수동 배포
 
 1. [GitHub](https://github.com)에 로그인
-2. **New repository** → 저장소 이름 입력 (예: `card-expense-app`) → **Create repository**
+2. **New repository** → 저장소 이름: `card-expense-app` → **Create repository**
 3. 이 폴더의 파일을 저장소에 업로드
-4. 저장소 **Settings** → **Pages**
-5. **Build and deployment** → Source: **Deploy from a branch**
-6. Branch: **main**, Folder: **/ (root)** → **Save**
-7. 1~2분 후 `https://[사용자명].github.io/[저장소명]/` 주소로 접속
+4. 저장소 **Settings** → **Pages** → Source: **GitHub Actions**
+5. `main` 브랜치에 푸시되면 자동 배포됩니다.
 
 ## 기술 스택
 
