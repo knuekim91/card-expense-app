@@ -49,6 +49,9 @@ let expenses = [];
 let realtimeChannel = null;
 
 function isConfigValid() {
+  if (typeof SUPABASE_URL === 'undefined' || typeof SUPABASE_ANON_KEY === 'undefined') {
+    return false;
+  }
   return (
     typeof SUPABASE_URL === 'string' &&
     typeof SUPABASE_ANON_KEY === 'string' &&

@@ -4,6 +4,13 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>카드 사용 내역</title>
+  <script>
+    (function () {
+      if (location.hostname.endsWith('github.io') && location.pathname.includes('card-expense-app')) {
+        document.write('<base href="/card-expense-app/">');
+      }
+    })();
+  </script>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
