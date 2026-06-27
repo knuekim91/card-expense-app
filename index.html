@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>카드 사용 내역</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="app">
+    <header class="header">
+      <h1>카드 사용 내역</h1>
+      <p class="subtitle">4개 카드의 사용 내역을 기록하고 월별로 확인하세요</p>
+    </header>
+
+    <section class="card-summary" id="cardSummary" aria-label="카드별 총 사용 금액"></section>
+
+    <section class="panel">
+      <h2>사용 내역 입력</h2>
+      <form id="expenseForm" class="expense-form">
+        <div class="form-row">
+          <label for="cardSelect">카드</label>
+          <select id="cardSelect" required>
+            <option value="card1">NH농협카드(재홍)</option>
+            <option value="card2">롯데카드(재홍)</option>
+            <option value="card3">우리카드(재홍)</option>
+            <option value="card4">삼성카드(정이)</option>
+          </select>
+        </div>
+        <div class="form-row">
+          <label for="amountInput">사용 금액</label>
+          <input type="number" id="amountInput" min="1" step="1" placeholder="금액 (원)" required>
+        </div>
+        <div class="form-row">
+          <label for="dateInput">사용 일자</label>
+          <input type="date" id="dateInput" required>
+        </div>
+        <div class="form-row">
+          <label for="descInput">사용 내역</label>
+          <input type="text" id="descInput" maxlength="100" placeholder="예: 마트, 주유, 식사" required>
+        </div>
+        <button type="submit" class="btn btn-primary">추가</button>
+      </form>
+    </section>
+
+    <section class="panel">
+      <div class="panel-header">
+        <h2>월별 사용 금액</h2>
+        <div class="month-nav">
+          <button type="button" id="prevMonth" class="btn btn-icon" aria-label="이전 달">‹</button>
+          <span id="currentMonthLabel" class="month-label"></span>
+          <button type="button" id="nextMonth" class="btn btn-icon" aria-label="다음 달">›</button>
+        </div>
+      </div>
+      <div id="monthlySummary" class="monthly-summary"></div>
+    </section>
+
+    <section class="panel">
+      <div class="panel-header">
+        <h2>전체 내역</h2>
+        <select id="filterCard" class="filter-select">
+          <option value="all">전체 카드</option>
+          <option value="card1">NH농협카드(재홍)</option>
+          <option value="card2">롯데카드(재홍)</option>
+          <option value="card3">우리카드(재홍)</option>
+          <option value="card4">삼성카드(정이)</option>
+        </select>
+      </div>
+      <ul id="expenseList" class="expense-list"></ul>
+      <p id="emptyMessage" class="empty-message" hidden>등록된 사용 내역이 없습니다.</p>
+    </section>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
